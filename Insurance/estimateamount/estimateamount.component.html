@@ -1,0 +1,16 @@
+<div class="main">
+    <div>Vehicle Type</div>
+    <input type="radio" [(ngModel)]=vechType name="VecType" value="2W">2Wheeler
+    <input type="radio"[(ngModel)]=vechType name="VecType" value="4W">4Wheeler
+    <div>Plan type</div>
+    <input type="radio" [(ngModel)]=planType name="planType" value="Comprehensive">Comprehensive
+    <input type="radio"[(ngModel)]=planType name="type" value="Third Party">Third Party
+    <div>Select Model</div>
+    <select [(ngModel)]=vechModel>
+        <option *ngFor="let p of unique" >{{p}}</option>
+    </select>
+    <div>Age of Vehicle</div>
+    <input type=number name="age" [(ngModel)]=age>
+    <button (click)="show()">Estimate Amount</button>
+    <div>The amount estimated is {{amount}}</div>
+</div>

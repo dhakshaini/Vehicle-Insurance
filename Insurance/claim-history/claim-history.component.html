@@ -1,0 +1,28 @@
+<body>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div id="example1" style="color:rgb(6, 134, 151)">
+            <h3>Submitted Claims</h3>
+            
+        </div><br>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Request_Number</th>
+                    <th scope="col">Approve Status</th>
+                    <th scope="col">Requested Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of claim">
+                    <td> {{c[0]}} </td>
+                    <td> {{c[1]}} </td>
+                    <td> {{c[2]}} </td>                        
+              </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
+</body>
