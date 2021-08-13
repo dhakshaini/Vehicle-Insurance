@@ -1,0 +1,30 @@
+<p>list-policy works!</p>
+<div class="container">
+    
+     <table class="table table-striped table-bordered">
+         <thead>
+             <tr>
+                 <th>Policy Number</th>
+                 <th>Vehicle RegNum</th>
+                 <th>User Id</th> 
+                 <th>Plan Id</th> 
+                 <th>Period</th>
+                 <th>Start Date</th> 
+                 <th>End Date</th> 
+                   
+             </tr>
+         </thead>
+         <tbody>
+               <tr *ngFor="let e of policy;">              
+                 <td> {{e.policyNum}} </td>
+                 <td>{{e.vehicleRegNum.regNum}}</td>  
+                 <th>{{e.userId.userId}}</th> 
+                 <th>{{e.planId.planId}}</th>
+                 <td> {{e.period}} </td>
+                 <td> {{e.startDate}} </td> 
+                 <td> {{e.endDate}} </td> 
+                                    
+             </tr>
+         </tbody>
+     </table>
+ </div>
