@@ -1,0 +1,53 @@
+.divmain{
+    background-image: url('/assets/images/bajajlogin.png');
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:block;
+    margin:auto;
+    margin-top: 20px;
+    /* border:5px solid blue; */
+    border-radius: 5px;
+    padding:20px;
+    width:600px;
+    height:600px
+}
+label{
+    padding:10px;
+    /* display: block; */
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left:100px
+}
+input{
+    margin-top:5px;
+    padding:7px;
+    border:2px solid purple;
+    border-radius:10px;
+}
+input:focus{
+    border:2px solid purple;
+    border-radius:10px;
+    box-shadow:5px 5px 10px   rebeccapurple;
+}
+.button{
+    margin-top:250px;
+    margin-left:150px;
+    border-radius: 3px;
+    height: 50px;
+    background-color:blue;
+    color:white;
+    width:60px;
+    border-radius:10px;
+}
+.pswd{
+    margin-top:30px;
+    margin-left:220px;
+    background-color: crimson;
+    border-radius: 10px;
+    height:50px;
+}
+h2{
+    text-align:center;
+}
