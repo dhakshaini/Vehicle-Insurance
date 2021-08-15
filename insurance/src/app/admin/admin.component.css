@@ -1,0 +1,27 @@
+.main{
+    display: block;
+    height: 200px;
+}
+.divmenu{
+    display: block;
+    height:50px;
+    background-color: plum;
+}
+#divmain{
+    display:block;
+    margin-top: 20px;
+}
+li{
+    float:left;
+    padding:3px;
+    color:blue
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+a:focus{
+    color:red;
+}
