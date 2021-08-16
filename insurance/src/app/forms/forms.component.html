@@ -1,0 +1,31 @@
+<h2>Payment Details</h2>
+<div class="divmain">
+    <form ngForm #regForm=ngForm>
+
+        <label for="card">"Enter card number"</label>
+        <input type="text" [(ngModel)]="payment.cardNo" #un="ngModel" required pattern="^[0-9]{13}$" class="in" placeholder="Enter number" name="card" id="card" autocomplete="off">
+        <div *ngIf="un.invalid && (un.dirty||un.touched)" style="color:red;">
+            <div *ngIf="un.errors?.required">*Card No is required</div>
+            <div *ngIf="un.errors?.pattern">*Invalid Card No</div>
+        </div>
+        <br>
+
+        <label for="date">"Enter Expiry date (MM/YY)"</label>
+        <input type="text" [(ngModel)]="payment.expDate" #pn="ngModel" required  class="in" pattern="^[0-9]{2}/[0-9]{2}$" placeholder="Enter expiry date(MM/YY)" name="date" id="date" autocomplete="off">
+        <div *ngIf="pn.invalid && (pn.dirty||pn.touched)" style="color:red;">
+            <div *ngIf="pn.errors?.required">*Exp date is required</div>
+            <div *ngIf="pn.errors?.pattern">*Invalid Date</div>
+        </div>
+         <br>
+
+        <label for="cvv">"Enter CVV"</label>
+        <input type="text" [(ngModel)]="payment.cvv" #cn="ngModel" required pattern="^[0-9]{3}$" class="in" placeholder="Enter number" name="cvv" id="cvv" autocomplete="off">
+        <div *ngIf="cn.invalid && (cn.dirty||cn.touched)" style="color:red;">
+            <div *ngIf="cn.errors?.required">*CVV is required</div>
+            <div *ngIf="cn.errors?.pattern">*Invalid CVV</div>
+        </div>
+        <br>
+
+        <button  type="button" [disabled]="regForm.invalid" >Pay</button>
+    </form>
+</div>

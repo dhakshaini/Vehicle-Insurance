@@ -1,0 +1,49 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title> Basic Tags </title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-3"></div> -->
+        <div class="container">
+
+            <br>
+            <div id="example1" style="color:rgb(6, 134, 151) ;text-align:center">
+                <h3> Submitted Claims </h3>
+            </div><br>
+
+            <table class="table  table-striped table-bordered">
+                <thead>
+                    <tr>
+
+                        <th>Claim Date</th>
+                        <th>Status</th>
+                        <th>Requested Amount</th>
+                        <th>Reason</th>
+                        <th>Request number</th>
+                        <!-- <th scope="col">Decline/Approve</th> -->
+                        <th>Decline</th>
+                        <th>Approve</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let e of claim" [class.myClass]="isClicked">
+
+                        <td> {{e.claimDate}} </td>
+                        <td> {{e.approvStatus}} </td>
+                        <td> {{e.reqAmt}} </td>
+                        <td> {{e.reason}} </td>
+                        <td>{{e.request_Num}}</td>
+                        <td><button class="btn btn-warning" style="margin-left: 20px;background-color:rgb(231, 181, 15);color: black"
+                                (click)="declineClaim(e.request_Num)">Decline</button></td>
+                        <td> <button class="btn btn-warning"
+                                style="margin-left: 20px;background-color:rgb(29, 223, 236) ;color: black;"
+                                (click)="approveClaim(e.request_Num)">Approve</button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>

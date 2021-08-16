@@ -1,0 +1,19 @@
+<div class="main">
+    <h3> Estimate Insurance Premium </h3><br>
+    <div class="label"> <b>Vehicle Type </b> </div>
+    <input type="radio" [(ngModel)]=vechType name="VecType" value="2W"> 2-Wheeler
+    <input type="radio"[(ngModel)]=vechType name="VecType" value="4W"> 4-Wheeler
+    <div class="label"> <b> Plan type</b></div>
+    <input type="radio" [(ngModel)]=planType name="planType" value="Comprehensive"> Comprehensive
+    <input type="radio"[(ngModel)]=planType name="type" value="Third Party"> Third Party
+    <div class="label"><b> Select Model</b></div>
+    <select [(ngModel)]=vechModel>
+        <option *ngFor="let p of unique" >{{p}}</option>
+    </select>
+    <div class="label"><b>Age of Vehicle</b></div>
+    <input type=number name="age" [(ngModel)]=age placeholder="Enter Age in Years">
+    <button (click)="show()">Estimate Amount</button>
+    <div class="result" *ngIf="submitted && amount==0">No Plans Available</div>
+    <div class="result" *ngIf="submitted && amount!=0">The amount estimated is {{amount}}</div>
+
+</div>

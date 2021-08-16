@@ -1,0 +1,61 @@
+<div class="main" style="align-content:center;">
+    <div [hidden]="submitted" style="width: 200px;">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name"> <b> Amount </b> </label>
+                <input type="text" class="form-control" id="amount" placeholder="Enter Amount in Rupees" #age="ngModel" [(ngModel)]="plan.amount" required
+                    name="amount">
+                <div *ngIf="age.invalid && (age.dirty||age.touched)" style="color:red; ">
+                    <div *ngIf="age.errors?.required">*Amount is required</div>
+
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="name"><b> Plan Type </b> </label>
+                <select name="planType" id="planType" style="margin:5px;"  required [(ngModel)]="plan.planType">
+
+                    <option value="Comprehensive">Comprehensive</option>
+                    <option value="Third Party">Third Party</option>
+
+                </select><br><br>
+            </div>
+            <div class="form-group">
+                <label for="name"> <b> Vehicle Type </b> </label><br>
+                <input type="radio" value="2W" id="vehicleType" style="margin:5px;" #vt="ngModel"
+                    [(ngModel)]="plan.vehicleType" required name="vehicleType">
+                <label class="form-group">2-Wheeler</label>
+
+                <input type="radio" value="4W" id="vehicleType" style="margin:5px;" #vt="ngModel"
+                    [(ngModel)]="plan.vehicleType" required name="vehicleType">
+                <label class="form-group">4-Wheeler</label>
+                <br>
+
+                <div *ngIf="vt.invalid && (vt.dirty||vt.touched)" style="color:red; ">
+                    <div *ngIf="vt.errors?.required">*Vehicle Type is required</div>
+
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name"><b>Vehicle Model</b></label>
+                <input type="text" class="form-control" placeholder="Enter Vehicle Model" id="vehicleModel" #vm="ngModel" [(ngModel)]="plan.vehicleModel"
+                    required name="vehicleModel">
+                <div *ngIf="vm.invalid && (vm.dirty||vm.touched)" style="color:red; ">
+                    <div *ngIf="vm.errors?.required">*Vehicle Model is required</div>
+
+                </div>
+            </div>
+            <br>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-info">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <h5>You submitted successfully!</h5>
+    </div>
+</div>

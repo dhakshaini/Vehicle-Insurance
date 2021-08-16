@@ -1,0 +1,61 @@
+<form [formGroup]="policyForm" (ngSubmit)="onSubmit()">
+    <h3>Choose a Plan Type</h3>
+    <div>
+        <input type="radio" id="planType1" name="planType" formControlName="planType" value="Comprehensive">
+        <label>Comprehensive</label>
+        <input type="radio" id="planType2" name="planType" formControlName="planType" value="Third Party">
+        <label>Third Party</label>
+    </div>
+    <div>
+        <label>VEHICLE TYPE</label>
+    </div>
+    <div>
+        <input type="radio" id="2W" name="vehicleType" formControlName="vehicleType" value="2W">
+        <label for="vehicleType">Two Wheeler</label>
+        <input type="radio" id="4W" name="vehicleType" formControlName="vehicleType" value="4W">
+        <label for="4W">Four Wheeler</label>
+    </div>
+    <div>Select Model</div>
+        <select formControlName="model">
+            <option *ngFor="let p of unique"  [ngValue]="p">{{p}}</option>
+        </select>
+    <div>
+        <label for="duration" >ENTER DURATION:</label>
+    </div>
+    <div>
+        <input type="number" min="1" max="3" name="duration" formControlName="duration" id="duration" placeholder="Enter Duration in Years" required>
+    </div>
+    <div *ngIf="submitted && policyForm.controls.duration.errors" class="error">
+        <div *ngIf="submitted && policyForm.controls.duration.errors.required">Enter duration</div>
+    
+    </div>
+        <form>
+        <label style="padding-top: 5px;display: block;" for="card">"Enter card number"</label>
+        <input type="text" ngModel #un="ngModel" required pattern="^[0-9]{16}$" class="in" placeholder="Enter number" name="card" id="card" autocomplete="off">
+        <div *ngIf="un.invalid && (un.dirty||un.touched)" style="color:red;">
+            <div *ngIf="un.errors?.required">*Card No is required</div>
+            <div *ngIf="un.errors?.pattern">*Invalid Card No</div>
+        </div>
+        <br>
+        <label style="padding-top: 5px;display: block;" for="date">"Enter Expiry date (MM/YY)"</label>
+        <input type="text" ngModel #pn="ngModel" required  class="in" pattern="^[0-9]{2}/[0-9]{2}$" placeholder="Enter expiry date(MM/YY)" name="date" id="date" autocomplete="off">
+        <div *ngIf="pn.invalid && (pn.dirty||pn.touched)" style="color:red;">
+            <div *ngIf="pn.errors?.required">*Exp date is required</div>
+            <div *ngIf="pn.errors?.pattern">*Invalid Date</div>
+        </div>
+         <br>
+
+        <label style="padding-top: 5px;display: block;" for="cvv">"Enter CVV"</label>
+        <input type="text" ngModel #cn="ngModel" required pattern="^[0-9]{3}$" class="in" placeholder="Enter number" name="cvv" id="cvv" autocomplete="off">
+        <div *ngIf="cn.invalid && (cn.dirty||cn.touched)" style="color:red;">
+            <div *ngIf="cn.errors?.required">*CVV is required</div>
+            <div *ngIf="cn.errors?.pattern">*Invalid CVV</div>
+        </div>
+        <br>
+
+        <button (click)= "pay()"type="button">Pay</button><br>
+        </form>
+        <button [disabled]="paid">BUY POLICY</button>
+    </form>
+
+

@@ -1,0 +1,38 @@
+<H1></H1>
+<h3 class="p-3 text-center"> My Policies </h3>
+<div class="container">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <td>POLICY NUM</td>
+        <td>PERIOD</td>
+        <td>START DATE</td>
+        <td>END DATE</td>
+        <td>USER ID</td>
+        <td>USERNAME</td>
+        <td>PHONE NUMBER</td>
+        <td>PLAN ID</td>
+        <td>PLAN AMOUNT</td>
+        <td>REG. NUM</td>
+        <td>MODEL</td>
+        <td>MANUFACTURER</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of policyList">
+        <td>{{ p.policyNum }}</td>
+        <td>{{ p.period }}</td>
+        <td>{{ p.startDate }}</td>
+        <td>{{ p.endDate }}</td>
+        <td>{{ p.userId.userId }}</td>
+        <td>{{ p.userId.userName }}</td>
+        <td>{{ p.userId.phone }}</td>
+        <td>{{ p.planId.planId }}</td>
+        <td>{{ p.planId.amount }}</td>
+        <td>{{ p.vehicleRegNum.regNum }}</td>
+        <td>{{ p.vehicleRegNum.model }}</td>
+        <td>{{ p.vehicleRegNum.manufact }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

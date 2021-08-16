@@ -1,0 +1,35 @@
+form{
+  margin:auto 5pv;
+}
+
+.class-title,.cl-title
+{
+  font-family: Arial,sans-serif;
+  font-weight: 700;
+}
+.myStyle
+{
+  margin:10px auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+input
+{
+  display: block;
+}
+.class-error
+{
+  height: 50%;
+}
+/* .backToList
+{
+  float: right;
+} */
+h3 {text-align: center;
+  color:rgb(6, 134, 151);}
+
+input[type="radio"]:checked {
+    background-color: #147cf3;
+
+  }
+  
