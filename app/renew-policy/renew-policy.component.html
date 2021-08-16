@@ -1,0 +1,25 @@
+<form [formGroup]="updatePolicy" (ngSubmit)="onSubmit()">
+<div>
+    <label for="policyNum">ENTER POLICY NUMBER:</label>
+</div>
+<div>
+    <input type="number" formControlName="policyNum" id="policyNum">
+</div>
+<div *ngIf="submitted && updatePolicy.controls.policyNum.errors" class="error">
+    <div class="text-danger" *ngIf="updatePolicy.controls.policyNum.errors.required">
+        Policy number must be entered
+      </div>
+</div>
+<div>
+    <label for="endDate">END DATE:</label>
+</div>
+<div>
+    <input type="date" formControlName="endDate" name="endDate" required>
+</div>
+<div *ngIf="submitted && updatePolicy.controls.endDate.errors" class="error">
+    <div class="text-danger" *ngIf="submitted &&updatePolicy.controls.endDate.errors.required">
+        Choose an end date
+    </div>
+</div>
+<button class="btn btn-success">RENEW</button>
+</form>

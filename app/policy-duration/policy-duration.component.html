@@ -1,0 +1,53 @@
+<form [formGroup]="policyForm" (ngSubmit)="onSubmit()">
+<div>
+    <label for="planType">CHOOSE A PLAN TYPE:</label>
+</div>
+<div>
+    <input type="radio" id="planType1" name="planType" formControlName="planType" value="Comprehensive">
+    <label>Comprehensive</label>
+    <input type="radio" id="planType2" name="planType" formControlName="planType" value="Third Party">
+    <label>Third Party</label>
+</div>
+<div>
+    <label>VEHICLE TYPE</label>
+</div>
+<div>
+    <input type="radio" id="2W" name="vehicleType" formControlName="vehicleType" value="2W">
+    <label for="vehicleType">Two Wheeler</label>
+    <input type="radio" id="4W" name="vehicleType" formControlName="vehicleType" value="4W">
+    <label for="4W">Four Wheeler</label>
+</div>
+<div>Select Model</div>
+    <select formControlName="model">
+        <option *ngFor="let p of unique"  [ngValue]="p">{{p}}</option>
+    </select>
+<div>
+    <label for="duration" >ENTER DURATION:</label>
+</div>
+<div>
+    <input type="number" name="duration" formControlName="duration" id="duration" required>
+</div>
+<div *ngIf="submitted && policyForm.controls.duration.errors" class="error">
+    <div *ngIf="submitted && policyForm.controls.duration.errors.required">Enter duration</div>
+
+</div>
+<div>
+    <label for="startDate" >START DATE:</label>
+</div>
+<div>
+    <input type="date" name="startDate" formControlName="startDate" required>
+</div>
+<div *ngIf="submitted && policyForm.controls.startDate.errors"  class="error">
+    <div *ngIf="submitted && policyForm.controls.startDate.errors.required">Choose start date</div>
+</div>
+<div>
+    <label for="endDate" >END DATE:</label>
+</div>
+<div>
+    <input type="date" name="endDate"  formControlName="endDate" required>
+</div>
+<div *ngIf="submitted && policyForm.controls.endDate.errors"  class="error">
+    <div *ngIf="submitted && policyForm.controls.endDate.errors.required">Choose end date</div>
+</div>
+<button>BUY POLICY</button>
+</form>
