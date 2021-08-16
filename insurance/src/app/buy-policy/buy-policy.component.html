@@ -1,0 +1,68 @@
+<h2>Buy Insurance</h2>
+<div class="divmain">
+      <form ngForm #buyForm=ngForm >
+
+        <label for="type">Vehicle Type</label>
+        <input type="text" [(ngModel)]="vehicle.vehicleType"  #vt="ngModel" required pattern="[2,4]{1}[W]{1}" placeholder="Enter type(2W/4W)"class="in" name="type" id="type" autocomplete="off">
+        <div *ngIf="vt.invalid && (vt.dirty||vt.touched)" style="color:red;">
+         <div *ngIf="vt.errors?.required">*Type is required</div>
+         <div *ngIf="vt.errors?.pattern">*Invalid!</div>
+        </div>
+        <br>
+
+        <label for="manufactr">Manufacturer Name</label>
+        <input type="text" [(ngModel)]="vehicle.manufacturer"  #mn="ngModel" required  placeholder="Enter Manufacturer"class="in" name="manufactr" id="manufactr" autocomplete="off">
+           <div *ngIf="mn.invalid && (mn.dirty||mn.touched)" style="color:red;">
+            <div *ngIf="mn.errors?.required">*Manufacturer is required</div>
+        </div>
+        <br>
+
+        <label for="model">Bike/Car model name</label>
+        <input type="text"  [(ngModel)]="vehicle.model" #pn="ngModel"  required placeholder="Enter model"class="in" name="model" id="model" autocomplete="off" >
+        <div *ngIf="pn.invalid && (pn.dirty||pn.touched)" style="color:red;">
+            <div *ngIf="pn.errors?.required">*Model is required</div>
+        </div>
+        <br>
+
+        <label for="licno">Driving License</label>
+        <input type="text"  [(ngModel)]="vehicle.licNo"  #dl="ngModel" required pattern="^[A-Z]{2}[0-9]{2}\s[19|20]{2}[0-9]{9}$" placeholder="Enter Driving License" name="licno" id="licno" autocomplete="off" >
+        <div *ngIf="dl.invalid && (dl.dirty||dl.touched)" style="color:red;">
+            <div *ngIf="dl.errors?.required">*License is required</div>
+            <div *ngIf="dl.errors?.pattern">*Invalid!</div>
+        </div>
+        <br>
+
+        <label for="date">Purchase Date</label>
+         <input type="date" #dt="ngModel" [(ngModel)]="vehicle.purchaseDate" required  placeholder="Enter purchase Date" name="date" id="date">
+         <!-- <div *ngIf="dt.invalid && (dt.dirty||dt.touched)" style="color:red;">
+            <div *ngIf="dt.errors?.required">*Date is required</div>
+        </div> -->
+        <br>
+
+        <label for="regno">Registration Number</label>
+        <input type="" #rn="ngModel" [(ngModel)]="vehicle.regNo"  required  pattern="^[A-Z]{2}\s[0-9]{2}\s[A-Z]{2}\s[0-9]{4}$" placeholder="Enter Registration No" name="regno" id="regno"  autocomplete="off">
+        <div *ngIf="rn.invalid && (rn.dirty||rn.touched)" style="color:red;">
+            <div *ngIf="rn.errors?.required">*Reg No is required</div>
+            <div *ngIf="rn.errors?.pattern">*Invalid!</div>
+        </div>
+        <br>
+
+        <label for="engno">Engine Number</label>
+        <input type="text" #en="ngModel" [(ngModel)]="vehicle.engNo" required pattern="^[0-9]{2}[A-Z]{3}[0-9]{5}$"  placeholder="Enter Engine No" name="engno" id="engno"  autocomplete="off">
+        <div *ngIf="en.invalid && (en.dirty||en.touched)" style="color:red;">
+            <div *ngIf="en.errors?.required">*Engine number is required</div>
+            <div *ngIf="en.errors?.pattern">*Invalid!</div>
+        </div>
+        <br>
+
+        <label for="chno">Chassis Number</label>
+        <input type="text" #cn="ngModel" [(ngModel)]="vehicle.chasisNo" required pattern="^[0-9A-Z]{6}$" placeholder="Enter Chassis No"  name="chno" id="chno" >
+        <div *ngIf="cn.invalid && (cn.dirty||cn.touched)" style="color:red;">
+            <div *ngIf="cn.errors?.required">*Chassis No is required</div>
+            <div *ngIf="cn.errors?.pattern">*Invalid!</div>
+        </div>
+        <br>
+
+        <button type="button" [disabled]="buyForm.invalid"  (click)="show()">Submit</button>
+      </form>
+</div>

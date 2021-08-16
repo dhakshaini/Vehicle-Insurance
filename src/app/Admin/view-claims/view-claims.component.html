@@ -1,0 +1,58 @@
+<p>view-claims works!</p>
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+
+    <title> Basic Tags </title>
+
+     
+
+</head>
+
+<body>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+
+        <div id="example1" style="color:rgb(6, 134, 151)">
+            <h3>Submitted Claims</h3>
+        </div><br>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Request_Number</th>
+                    <th scope="col">Claim Date</th>
+                    <th scope="col">Approve Status</th>
+                    <th scope="col">Requested Amount</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Click To Decline/Approve</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr *ngFor="let e of claim" [class.myClass]="isClicked" >
+                    <td> {{e. request_Num}} </td>
+                    <td> {{e.claimDate}} </td>
+                    <td> {{e.approvStatus}} </td>                        
+                    <td> {{e.reqAmt}} </td>
+                    <td> {{e.reason}} </td>  
+                    <td>
+                        <button class="btn btn-warning" style="margin-left: 20px"  (click)="declineClaim(e.request_Num)" >Decline</button>
+                        <button class="btn btn-warning" style="margin-left: 20px" (click)="approveClaim(e.request_Num)" >Approve</button>
+                  </td>
+                   
+                  
+              </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+</body>
+
+</html>

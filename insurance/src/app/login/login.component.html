@@ -1,0 +1,18 @@
+<div class="divmain">
+    <h2>Login</h2>
+    <form #loginForm=ngForm>
+       <label for="uname">UserEmail</label>
+        <input type="text" [(ngModel)]="email" #un="ngModel" placeholder="Enter userEmail" required minlength="4" name="uemail" autocomplete="off">
+        <div *ngIf="un.invalid && (un.dirty||un.touched)" style="color:red;">
+            <div *ngIf="un.errors?.required">*Name is required</div>
+            <div *ngIf="un.errors?.minlength">*Name must contain min.4 letters</div>
+        </div>
+        <label for="upass">Password</label>
+        <input type="password" [(ngModel)]="password" #up="ngModel" placeholder="Enter password" required name="upass">
+        <div *ngIf="up.invalid && (up.dirty||up.touched)" style="color:red;">
+        <div *ngIf="up.errors?.required">*Password is required</div>
+        </div>
+        <button type="button" [disabled]=loginForm.invalid (click)="user()">User</button>
+        <button  type="button"  [disabled]=loginForm.invalid (click)="admin()">Admin</button>
+    </form>
+</div>

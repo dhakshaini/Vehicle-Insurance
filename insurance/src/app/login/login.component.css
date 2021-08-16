@@ -1,0 +1,34 @@
+*{
+    background-color: cornsilk;
+}
+.divmain{
+    display:block;
+    margin:auto;
+    margin-top: 20px;
+    width:300px;
+    border:5px solid purple;
+    border-radius: 5px;
+    padding:20px;
+}
+label{
+    display: block;
+    padding:10px;
+}
+input{
+    padding:10px;
+    border:2px solid purple;
+    border-radius:10px;
+}
+input:focus{
+    border:2px solid purple;
+    border-radius:10px;
+    box-shadow:5px 5px 10px   rebeccapurple;
+}
+button{
+    margin-top:30px;
+    margin-left:20px;
+    border-radius: 3px;
+}
+h2{
+    text-align:center;
+}
