@@ -1,0 +1,39 @@
+<div class="divmain">
+    <h2>Register</h2>
+    <form ngForm #regForm=ngForm>
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="user.userName" #un="ngModel" required minlength="4" class="in" placeholder="Enter username" name="uname" id="name" autocomplete="off">
+        <div *ngIf="un.invalid && (un.dirty||un.touched)" style="color:red;">
+            <div *ngIf="un.errors?.required">*Name is required</div>
+            <div *ngIf="un.errors?.minlength">*Name must contain min.4 letters</div>
+        </div>
+        <label for="phnum">PhoneNumber</label>
+        <input type="tel" [(ngModel)]="user.phone" #ph="ngModel" required pattern="^[6-9]\d{9}$" class="in" name="phnum">
+        <div *ngIf="ph.invalid && (ph.dirty||ph.touched)" style="color:red; ">
+            <div *ngIf="ph.errors?.required">*PhoneNumber is required</div>
+            <div *ngIf="ph.errors?.pattern">*PhoneNumber should have 10 dgits</div>
+        </div>
+        <label for="email">Email id</label>
+        <input type="text" [(ngModel)]="user.userEmail" #email="ngModel" class="in" name="email" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+        <div *ngIf="email.invalid && (email.dirty||email.touched)" style="color:red;">
+            <div *ngIf="email.errors?.required">*Email is required</div>
+            <div *ngIf="email.errors?.pattern">*Email is invalid</div>
+        </div>
+        <label for="Address">Address</label>
+        <input type="text" [(ngModel)]="user.userAddr" #addr="ngModel" pattern="^[a-zA-Z]*$"required class="in" name="addr">
+        <div *ngIf="addr.invalid && (addr.dirty||addr.touched)" style="color:red;">
+            <div *ngIf="addr.errors?.required">*Address is required</div>
+            <div *ngIf="addr.errors?.pattern">*Address is invalid</div>
+        </div>
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="user.userPswd" #up="ngModel" required  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" class="in" placeholder="Enter new password" name="password">
+        <div *ngIf="up.invalid && (up.dirty||up.touched)" style="color:red;font-weight: 10;">
+            <div *ngIf="up.errors?.required">*password is required</div>
+            <div *ngIf="up.errors?.pattern">*password is invalid</div>
+        </div>
+        <label for="confrmpass">Confirm Password</label>
+        <input type="password" [(ngModel)]="confirmpassword" #cp="ngModel" placeholder="Confirm password" required   name="cpass">
+        <div *ngIf="confirmpassword!=user.userPswd"style="color:black;font-weight: bold;">*Password not matching</div>
+        <button class="btn" [disabled]="regForm.invalid" (click)="show()">Register</button>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+  <div>
+    <header>
+      <span>TYCOON INSURANCE</span>
+      <div class="user">
+        <img src='./assets/images/logo.jpg' width=50px height=50px>
+         <span >Admin</span>
+      </div>
+  </header>
+  </div>
+  
+  <div class="sidenav">
+    <a routerLink='./' routerLinkActive="active">Home</a>
+    <a routerLink='planlist' routerLinkActive="active">Plan List</a>
+    <a routerLink='CreatePlan' routerLinkActive="active" >Create Plan</a>
+    <a routerLink='ViewClaim' routerLinkActive="active">View Claim</a>
+    <a routerLink='PolicyList' routerLinkActive="active">Policy List</a>
+    <a routerLink='../home'(click)="logout()" routerLinkActive="active">Logout</a>
+  </div>
+  <div class="main">
+    
+    <router-outlet></router-outlet>
+  </div> 

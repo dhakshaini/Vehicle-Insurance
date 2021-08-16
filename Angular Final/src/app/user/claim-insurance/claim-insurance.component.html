@@ -1,0 +1,83 @@
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div id="example1" class="col-md-6"><br>
+            <h3>Claim Insurance</h3><br>
+            <form [formGroup]="claimform" (ngSubmit)="claimpolicy()">
+                <label class="label-name"><b>Mobile Number</b></label>
+                <input type="text" class="form-control" formControlName="mobile" placeholder="Enter Mobile Number"
+                maxlength="10" pattern="[0-9]{10}"   title="10 Digit Mobile Number" required>
+                
+                  <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)"
+                  class="text-danger">
+              
+                <div *ngIf=" mobile.errors?.required">
+                  Mobile number is required
+                </div>
+                <div *ngIf="mobile.touched && mobile.errors?.pattern">
+                  Mobile Number is invalid
+                </div>
+                </div>
+    
+    
+                    <label class="label-name"><b>Policy number</b> </label>
+                    <input type="text" class="form-control" formControlName="PolicyNum" placeholder="Enter policy number"
+                    pattern="[0-9]{6}"  required>
+    
+                        <div *ngIf="PolicyNum.invalid && (PolicyNum.dirty || PolicyNum.touched)"
+                  class="text-danger">
+              
+                <div *ngIf=" PolicyNum.errors?.required">
+                    Policy number is required
+                </div>
+                <div *ngIf="PolicyNum.touched && PolicyNum.errors?.pattern">
+                    Policy Number is invalid
+                </div>
+                </div>
+    
+                    <label class="label-name"> <b>Request Amount</b> </label><br>
+                    <input type="text" class="form-control" formControlName="reqAmt" placeholder="Enter Amount"
+                        maxlength="10" title="Amount in Digits Only" required>
+                        <div class="text-danger" *ngIf="reqAmt.invalid && reqAmt.touched"> Request Amount is Required</div> 
+    
+    
+                    <label class="label-name"> <b>Reason To Claim Insurance</b></label><br>
+    
+                    <div>
+    
+    
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" value="Natural Disaster" formControlName="reason"
+                                required>
+                            <label class="form-check-label">Natural Disaster</label>
+                        </div>
+    
+    
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" value="Man-Made Disaster" formControlName="reason">
+                            <label class="form-check-label">Man-Made Disaster</label>
+                        </div>
+    
+    
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" value="Road Accident" formControlName="reason">
+                            <label class="form-check-label">Road Accident</label>
+                        </div>
+    
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" value="Theft" formControlName="reason">
+                            <label class="form-check-label">Theft</label>
+    
+                        </div>
+                    </div>
+    
+    
+                    <div class="text-center">
+                        <button class="btn btn-info btn-block my-4" size="2" 
+                        [disabled]="!claimform.valid"   (click)="finished()">Submit</button>
+                        <br><br>
+                    </div>
+    
+            </form>
+        </div>
+    
+        

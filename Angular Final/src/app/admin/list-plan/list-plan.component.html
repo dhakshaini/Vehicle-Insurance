@@ -1,0 +1,34 @@
+<div class="container">
+    <br>
+    <label for="amount"  style="margin-left: 940px;">
+       <b>  Update Amount</b></label>
+   <input type="number" [(ngModel)]="amount" style="margin-left: 940px;" placeholder="Enter Amount in Rs">
+   <div *ngIf="amount>100000" style="margin-left: 940px; color:red">*Enter amount less than 1,00,000</div>
+  
+   <br> <br>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>PlanId</th>
+                <th>Amount</th>
+                <th>Vehicle Type</th> 
+                <th>Plan Type</th>
+                <th>Vehicle Model</th>
+                <th>Delete</th>     
+                <th>Update</th>             
+            </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let e of plan;">              
+                <td> {{e.planId}} </td>
+                <td> {{e.amount}} </td>
+                <td> {{e.vehicleType}} </td>                       
+                <td> {{e.planType}} </td>
+                <td>{{e.vehicleModel}}</td> 
+                <td> <button  class="btn btn-warning" style="margin-left: 20px ;background-color:rgb(231, 181, 15);color: black" (click)="deletePlan(e.planId)">Delete</button></td>   
+                <td><button  class="btn btn-warning" style="margin-left: 20px ;background-color:rgb(29, 223, 236) ;color: black;" (click)="updatePlan(e.planId)">Update</button></td>                     
+              
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,115 @@
+<header>
+    TYCOON INSURANCE
+</header>
+ 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">     </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#sec1">Home <span class="sr-only"></span></a>
+      <a class="nav-item nav-link" href="#sec2">Insurance</a>
+      <a class="nav-item nav-link" href="#sec3">About Us</a>
+      <a class="nav-item nav-link" href="#sec4">Contact</a>
+    </div>
+  </div>
+</nav>
+  <div class="carousel col-md-6" id="sec1">
+    <img src="../assets/images/car.png" alt="car-insurance">
+  </div>
+  <div class="formContent">
+
+    <form #loginForm=ngForm>
+        
+         <input type="text" [(ngModel)]="email" #un="ngModel" placeholder="Enter Email" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" name="uemail" autocomplete="off">
+         <div *ngIf="un.invalid && (un.dirty||un.touched)" style="color:black;  margin:0 auto; height:30px;font-weight: bold;">
+             <div *ngIf="un.errors?.required" class="error">*Email is required</div>
+             <div *ngIf="un.errors?.pattern" class="error">*Email is invalid</div>
+         </div>
+         <input type="password" [(ngModel)]="password" #up="ngModel" placeholder="Enter password" required name="upass">
+         <div *ngIf="up.invalid && (up.dirty||up.touched)" style="color:black; margin:0 auto; height:30px;font-weight: bold;">
+         <div *ngIf="up.errors?.required" class="error">*Password is required</div>
+         </div>
+      <input type="submit" [disabled]=loginForm.invalid (click)="user()"value="USER">
+      <input type="submit" (click)="admin()" value="ADMIN">
+    </form>
+  
+    <div id="formFooter">
+      <a class="underlineHover " (click)="forgotPassword()">Forgot Password?</a>
+      <a class="underlineHover" (click)="register()" routerLinkActive="active">Not a user?Register</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="content">
+    <h4 id="sec2">Vehicle Insurance</h4>
+    <p>
+      Vehicle insurance is a contract between you and the insurance company that protects you against financial loss in the event of an accident or theft. In exchange for your paying a premium, the insurance company agrees to pay your losses as outlined in your policy.
+Auto insurance provides coverage for:
+<ul>
+  <li>Property – such as damage to or theft of your car.</li>
+  <li>Liability – your legal responsibility to others for bodily injury or property damage.</li>
+  <li>Medical – the cost of treating injuries, rehabilitation and sometimes lost wages and funeral expenses.
+  </li>
+</ul>
+    <h4 >Comprehensive Insurance</h4>
+    <p>A comprehensive car insurance is an extensive motor insurance plan that covers the insured person against both, own damages and any 
+      third party liabilities. It is also known as 'own-damage' or a 'other than collision' car insurance as this policy also protects you 
+      financially against any losses that might arise not due to collision. Although comprehensive car insurance offers more coverage than a 
+      Third-party cover, it is not necessary that a comprehensive cover will always be expensive. And now that you know what comprehensive 
+      insurance for a car is you can compare comprehensive car insurance quotes online to check what suits you best.A comprehensive car 
+      insurance policy is the most superior kind of protection you can provide your car with. It is one step ahead of the basic third-party 
+      car insurance policy that offers protection and security only for the third-party or the vehicle you dash into. Third-party insurance 
+      fails to cover your own vehicle against the possibility of an accident. Comprehensive insurance on the other hand provides extensive 
+      coverage and offers more services. 
+      </p>
+      <h4>Benefits of Buying Comprehensive car insurance</h4>
+      <p>
+        A comprehensive car insurance policy protects your car from any unforeseen event except collision. It also covers for losses incurred 
+        during an accident. Let’s take a look at the various other benefits of this “other than collision” cover:
+        <ul>
+          <li>It is the highest level of protection you can give your car</li>
+          <li>If you are found to be at fault in event of an accident, with comprehensive car insurance, you can claim for losses incurred in such situations
+          </li>
+          <li>It covers lawsuits, including legal fees brought against you as a result of an accident</li>
+          <li>Peace of mind and financial protection</li>
+          <li>Offers financial aid in case your car is written off</li>
+          <li>Unlike third-party insurance, it covers from damages caused to your own car during an accident</li>
+        </ul>
+
+
+
+
+      <h4>Comprehensive Insurance Cover</h4>
+      <p>In order to avoid any last minute surprises, it is always better to have a complete grasp on the inclusions and exclusions
+         mentioned in your vehicle insurance policy. For that, you must read it very carefully. Generally, you won’t need to worry about 
+         the following, as they will be covered under your comprehensive car insurance:
+         <ul>
+           <li>Damage caused by Natural disasters or severe weather</li>
+           <li>Fire</li>
+           <li>Theft</li>
+           <li>Vandalism</li>
+           <li>Damage to third party</li>
+           <li>Damage to your vehicle caused by falling objects such as trees</li>
+           <li>Damage or destruction of your vehicle caused by an act of civil disturbance such as riots</li>
+         </ul>         
+    <h4>Third Party Insurance</h4>
+    <p>Third-party insurance, which is also sometimes referred to as ‘act-only’ insurance is a statutory requirement for all vehicle owners 
+      as per the Motor Vehicle Act. It is a type of insurance cover where the insurer offers protection against damage to the third-party 
+      vehicle, personal property and physical injury. The policy does not provide any coverage to the insurer. 
+      If a policyholder meets with an accident, then the insurer offers financial assistance to pay for the cost of repairs to the third-party 
+      property. Thus, it reduces the financial burden for the policyholder. In the event of an accident, the insured must inform the insurance 
+      company about it immediately before filing for a claim. When the claim is filed, the insurer appoints a surveyor to assess the damages 
+      and verify the estimated cost of repairs. Once the verification is completed, the insurer settles the claim.
+      </p>
+      <h4 id="sec3">About Us</h4>
+      <p>Tycoon Insurance Company received the certificate of registration from IRDA on 2nd May 2001 to conduct general insurance business in India. Tycoon General Insurance, today, is one of the largest private insurer in the industry with offices in over 1100 towns and cities. The Company has continuously been expanding its operations to reach out to its customers.
+        On May 2nd, 2021 we completed 20 years of care. In our two decades long journey we rose from a humble start-up to an industry leader. We have gained the trust of close to 11 crore customers with the help of over 9000 employees, a robust distribution network of more than 80,000 agents, almost 9,000 motor dealer partners and over 240 bank partners. We are also associated with most brokers, web aggregators and major e-commerce platforms. We have formed meaningful relationships with our partners, customers and employees in the course of our journey so far.
+        The Company recently changed its brand identity to ‘Caringly Yours’ to reposition itself in the minds of Indian consumers as a brand that protects and cares about customer’s financial worries around their most prized possessions - their health, home & content, vehicles, businesses etc. With this, the Company not just aims to take its service to the next level, but also seeks to provide the best customer experience at every touchpoint and make insurance a pull rather than a push product. 
+        Tycoon Insurance caters to individuals across demographics of the country and the corporate sector with its wide range of products and services that go beyond insurance. The Company is not only bringing insurance solutions to the customers’ doorstep but also improving insurance penetration, with its advanced digital and mobile applications. Today through its digital offices it has reached out to over 1000 new Tier 2 and 3 towns across India. The Company has a strong focus on customer centricity and aims at delivering superior value with an excellent and caring experience for the customer. Today the Company is taking its relationships with the customers beyond insurance, by offering them a plethora of digitised customer-centric initiatives.</p>
+  </div>
+  <footer id="sec4">
+    <p>© 2014-2021 Tycoon Insurance Co.,Ltd. All rights reserved.</p>
+  </footer>

@@ -1,0 +1,32 @@
+<div class="divmain">
+    <h3> Renew Policy</h3>
+    <form [formGroup]="updatePolicy" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <div>
+                <label for="policyNum"><b>Enter Policy Number</b></label>
+            </div>
+            <div>
+                <input type="number" formControlName="policyNum" id="policyNum" class="in" placeholder="Enter Policy Number"/>
+            </div>
+            <div *ngIf="submitted && updatePolicy.controls.policyNum.errors" class="error">
+                <div class="text-danger" *ngIf="updatePolicy.controls.policyNum.errors.required">
+                    Policy number must be entered
+                </div>
+            </div>
+            <div>
+                <label for="duration"><b>Enter Duration</b></label>
+            </div>
+            <div>
+                <input type="number" min="1" max="3" name="duration" formControlName="duration" class="in" id="duration" placeholder="Enter Duration in Years" required>
+            </div>
+            <div *ngIf="submitted && updatePolicy.controls.duration.errors" class="error">
+                <div class="text-danger" *ngIf="submitted && updatePolicy.controls.duration.errors.required">Duration must be entered</div>
+                <div class="text-danger" *ngIf="submitted && updatePolicy.controls.duration.errors.min">Minimum 1 year</div>
+                <div class="text-danger" *ngIf="submitted && updatePolicy.controls.duration.errors.max">Maximum 3 year</div>
+            </div>
+                <button class="btn btn-success">Renew</button>
+
+            
+        </div>
+    </form>
+</div>

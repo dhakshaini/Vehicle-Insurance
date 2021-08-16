@@ -1,0 +1,51 @@
+<!-- 
+<div class="main">
+    <nav class="navbar navbar-dark" style="height:100px">
+        <ul>
+          <img src='./assets/images/logo.jpg'  style="background-color: blue"width=50px height=50px>
+          <span class="name">{{name}}</span>
+          <li>
+            <a routerLink='./vehicleLink'class="btn btn-primary active" role="button" routerLinkActive="active">BuyInsurance</a></li>
+          <li>
+            <a routerLink='./claimLink' class="btn btn-primary active" role="button" routerLinkActive="active">ClaimInsurance</a></li>
+          <li>
+            <a routerLink='./renewPolicy'class="btn btn-primary active" role="button" routerLinkActive="active">RenewInsurance</a></li>
+          <li>
+            <a routerLink='./estimateLink'class="btn btn-primary active" role="button" routerLinkActive="active">CalculateEstimate</a></li>
+            <li>
+            <a routerLink='./mypolicy'class="btn btn-primary active" role="button" routerLinkActive="active">My Policies</a></li>
+            <li>
+              <a routerLink='./claimhistory'class="btn btn-primary active" role="button" routerLinkActive="active">My Claim history</a>
+            </li>
+            <li style="margin-left: 800px;"><a routerLink='../home'>Logout</a></li>
+            </ul>
+    </nav>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+     <!-- Side navigation -->
+<div>
+  <header>
+    <span>TYCOON INSURANCE</span>
+    <div class="user">
+      <img src='./assets/images/logo.jpg' width=50px height=50px>  
+      <!-- style="background-color: blue" -->
+      <span >{{name}}</span>
+    </div>
+</header>
+</div>
+
+<div class="sidenav">
+  <a routerLink='./' routerLinkActive="active">Home</a>
+  <a routerLink='./vehicleLink' routerLinkActive="active">Buy Insurance</a>
+  <a routerLink='./claimLink' routerLinkActive="active" >Claim Insurance</a>
+  <a routerLink='./estimateLink' routerLinkActive="active">Calculate Estimate</a>
+  <a routerLink='./renewPolicy' routerLinkActive="active">Renew Insurance</a>
+  <a routerLink='./mypolicy' routerLinkActive="active">My Policies</a>
+  <a routerLink='./claimhistory' routerLinkActive="active">My Claim history</a>
+  <a routerLink='../home' (click)="logout()" routerLinkActive="active">Logout</a>
+</div>
+<div class="main">
+  
+  <router-outlet></router-outlet>
+</div> 
